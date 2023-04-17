@@ -1,35 +1,69 @@
-# interview-sonyo
+<!-- 1. State managment
+ref => ref.value
+reactive => reactive
+ <h1>{{ message }}</h1>
+  <p>Count is: {{ counter.count }}</p>
 
-This template should help get you started developing with Vue 3 in Vite.
+2 Attribute Bindings
+v-bind => :id="title"
+  <h1 :class="titleClass">Make me red</h1>
 
-## Recommended IDE Setup
+3 Event Listner
+@click=@click
+<button @click="increment">count is: {{ count }}</button>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+4 Form Bindings
+:value="text @input="onInput
+v-model="text"
+<input v-model="text" placeholder="Type here">
 
-## Customize configuration
+5 Conditional Rendering
+v-if / v-else
+  <h1 v-if="awesome">Vue is awesome!</h1>
+  <h1 v-else>Oh no 😢</h1>
+  v-show
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+6 List Rendering
+v-for
+  <li v-for="todo in todos" :key="todo.id">
+    {{ todo.text }}
+  </li>
 
-## Project Setup
+7 Computed Property
+const hideCompleted = ref(false)
+const filteredTodos = computed(() => {
+  return hideCompleted.value
+    ? todos.value.filter((t) => !t.done)
+    : todos.value
+})
 
-```sh
-npm install
-```
+8 Lifecycle and Template Refs
+onMounted(() => {
+  p.value.textContent = 'mounted!'
+})
 
-### Compile and Hot-Reload for Development
+9 Watchers
+watch(todoId, fetchData)
 
-```sh
-npm run dev
-```
+10 Components & Props
+const props = defineProps({
+  msg: String
+})
+<ChildComp :msg="greeting" />
 
-### Compile and Minify for Production
+11 Emits
+<script setup>
+// declare emitted events
+const emit = defineEmits(['response'])
 
-```sh
-npm run build
-```
+// emit with argument
+emit('response', 'hello from child')
+</script>
+ <ChildComp @response="(msg) => childMsg = msg" />
 
-### Lint with [ESLint](https://eslint.org/)
+12 Slot
+<template>
+  <slot>Fallback content</slot>
+</template>
 
-```sh
-npm run lint
-```
+ -->

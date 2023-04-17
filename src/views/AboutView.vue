@@ -6,6 +6,7 @@ const state = reactive({ count: 0 })
 function increment() {
   state.count++
 }
+
 </script>
 <template>
   <div class="about">
